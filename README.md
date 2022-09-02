@@ -3,8 +3,14 @@ TABZS is a one stop solution to all the challenges a National Cafe Shop faces to
 
 The extract-transform-load (ETL) pipeline has been setup to run on Amazon Web Service (AWS) using Continuous Integration Continuous Deployment (CICD) through GitHub. The Infrastructure as Code (IAC) setup uses .yaml and .yml files to implement the infrastructure in AWS via Amazon Cloud Formation.
 
-The basic setup of the ETL pipeline itself is as follows:
+The AWS components of the ETL pipeline itself are as follows:
 
+- Raw data S3 bucket (to hold the raw data .csv files)
+- Transformed data S3 bucket (to hold the transformed data .csv files)
+- An extract, transform and load Lambda
+- A database in Redshift
+
+Externally an AWS EC2 server was also setup to run Grafana for visualisation of monitoring, however this was not implemented via IAC or the CICD pipeline.
 
 To run a localised verion of the ETL pipeline (i.e. without AWS) undertake the following: 
 - Clone this repository to your machine
